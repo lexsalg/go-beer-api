@@ -1,0 +1,28 @@
+version: "3.7"
+services:
+  app:
+    container_name: go_beer_api
+    build: .
+    ports:
+      - 8080:8080
+    depends_on:
+      - database
+    environment:
+      - 'DB_PORT=3306'
+      - 'DB_HOST=beerapp'
+  
+  database:
+    container_name: go_database
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: test
+      MYSQL_USER: test
+      MYSQL_PASSWORD: test
+      MYSQL_DATABASE: beerapp
+    ports:
+      - 3306:3306
+    volumes:
+      - golang_docker_data:/var/lib/mysql 
+
+volumes:
+  golang_docker_data:

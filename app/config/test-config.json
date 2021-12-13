@@ -1,0 +1,17 @@
+{
+  "server": {
+    "address": ":8080"
+  },
+  "database": {
+    "host": "localhost",
+    "host_docker": "database",
+    "port": "3306",
+    "user": "test",
+    "pass": "test",
+    "name": "beerapp"
+  },
+  "jwt": {
+    "secret": "tokens4nga#raha$!asek4lL",
+    "expired": 2
+  }
+}
