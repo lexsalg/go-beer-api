@@ -3,7 +3,7 @@
     "address": ":8080"
   },
   "database": {
-    "host": "localhost",
+    "host": "database",
     "host_docker": "database",
     "port": "3306",
     "user": "test",
@@ -11,7 +11,7 @@
     "name": "beerapp"
   },
   "database_testing": {
-    "host": "localhost",
+    "host": "database",
     "host_docker": "database",
     "port": "3306",
     "user": "test",
@@ -24,6 +24,6 @@
   },
   "currency": {
     "url": "http://apilayer.net/api/live",
-    "key": "11cf9e92340b6994814cb6ad55cfeb7e"
+    "key": "3c6df49ec70f01acddc0ae0d11aa4f43"
   }
 }
