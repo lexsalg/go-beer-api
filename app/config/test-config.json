@@ -10,6 +10,14 @@
     "pass": "test",
     "name": "beerapp"
   },
+  "database_testing": {
+    "host": "localhost",
+    "host_docker": "database",
+    "port": "3306",
+    "user": "test",
+    "pass": "test",
+    "name": "beerapp_test"
+  },
   "jwt": {
     "secret": "tokens4nga#raha$!asek4lL",
     "expired": 2
