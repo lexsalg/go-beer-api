@@ -1,6 +1,7 @@
 package routes
 
 import (
+	"beerapi/app/presenter/beers"
 	"beerapi/app/presenter/health"
 	"beerapi/app/presenter/users"
 
@@ -8,8 +9,9 @@ import (
 )
 
 type HandlerList struct {
-	UserHandler   users.Presenter
 	HealthHandler health.Presenter
+	UserHandler   users.Presenter
+	BeerHandler   beers.Presenter
 }
 
 func (handler *HandlerList) Routes(fiberContext *fiber.App) {
@@ -20,4 +22,13 @@ func (handler *HandlerList) Routes(fiberContext *fiber.App) {
 
 	//user Endpoint
 	api.Post("/users/register", handler.UserHandler.Register)
+
+	//beers Endpoint
+	beers := api.Group("/beers")
+	beers.Get("", handler.BeerHandler.All)
+	beers.Post("", handler.BeerHandler.Register)
+	beers.Put("/:beerID", handler.BeerHandler.Update)
+	beers.Get("/:beerID", handler.BeerHandler.GetById)
+	beers.Get("/:beerID/boxprice", handler.BeerHandler.BeerBox)
+
 }

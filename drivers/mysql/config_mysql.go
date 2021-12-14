@@ -1,11 +1,13 @@
 package mysql
 
 import (
+	"beerapi/drivers/mysql/beers"
+	"beerapi/drivers/mysql/users"
 	"fmt"
+	"log"
+
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
-	"log"
-	"beerapi/drivers/mysql/users"
 )
 
 type ConfigDB struct {
@@ -33,5 +35,5 @@ func (configDB *ConfigDB) InitDB() *gorm.DB {
 }
 
 func MigrateDB(db *gorm.DB) {
-	db.AutoMigrate(&users.Users{})
+	_ = db.AutoMigrate(&users.Users{}, &beers.Beers{})
 }

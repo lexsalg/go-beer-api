@@ -13,5 +13,9 @@
   "jwt": {
     "secret": "tokens4nga#raha$!asek4lL",
     "expired": 2
+  },
+  "currency": {
+    "url": "http://apilayer.net/api/live",
+    "key": "11cf9e92340b6994814cb6ad55cfeb7e"
   }
 }
